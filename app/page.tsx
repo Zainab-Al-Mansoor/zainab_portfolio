@@ -3,6 +3,7 @@ import CodeCard from '@/components/CodeCard';
 import { RealtorVisual, SonicVisual } from '@/components/ProjectVisuals';
 import ThemeToggle from '@/components/ThemeToggle';
 import CopyEmail from '@/components/CopyEmail';
+import ProjectImage from '@/components/ProjectImage';
 
 const nav = [
   { href: '#services', label: 'Services' },
@@ -99,14 +100,26 @@ export default function Home() {
                 <span className="live-dot h-2 w-2 rounded-full bg-mint" />
                 Available for full-time roles · {profile.location}
               </p>
-              <p className="rise d2 mt-7 font-display text-lg font-semibold text-muted">Hi, I’m Zainab Al Mansoor</p>
+              <div className="rise d2 mt-7 flex items-center gap-4">
+                <span className="rounded-full bg-gradient-to-br from-accent to-accent-2 p-[2px]">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src={profile.photo} alt="Zainab Al Mansoor" width={64} height={64} className="h-16 w-16 rounded-full border-2 border-bg object-cover" />
+                </span>
+                <span>
+                  <span className="block font-display text-lg font-bold">Hi, I’m Zainab Al Mansoor</span>
+                  <span className="block text-sm font-medium text-muted">{profile.role}</span>
+                </span>
+              </div>
               <h1 className="rise d2 mt-2 font-display text-[clamp(2.4rem,5.6vw,4.4rem)] font-extrabold leading-[1.04] tracking-[-0.035em]">
-                I build secure, scalable web platforms with <span className="text-gradient">.NET&nbsp;and&nbsp;AI.</span>
+                I build secure web platforms and <span className="text-gradient">ship AI that works.</span>
               </h1>
-              <p className="rise d3 mt-6 max-w-[36rem] text-lg text-muted">
-                .NET Developer at Sirat International. I design the database, build the API and ship the interface, using C#, ASP.NET Core 8 and SQL Server, with Python when a product needs machine learning.
-              </p>
-              <div className="rise d4 mt-9 flex flex-wrap gap-3">
+              <p className="rise d3 mt-6 max-w-[36rem] text-lg text-muted">{profile.intro}</p>
+              <ul className="rise d4 mt-6 flex flex-wrap gap-2 text-sm font-semibold" aria-label="Roles I’m open to">
+                {['.NET Developer', 'Full-Stack Engineer', 'AI/ML Engineer'].map((r) => (
+                  <li key={r} className="rounded-lg border border-line bg-surface px-3 py-1.5"><span className="mr-1.5 text-mint">✓</span>{r}</li>
+                ))}
+              </ul>
+              <div className="rise d4 mt-8 flex flex-wrap gap-3">
                 <a href="#work" className="btn-primary inline-flex items-center gap-2 rounded-xl px-6 py-3.5 font-semibold">
                   View projects <Icon name="arrow" className="h-4 w-4" />
                 </a>
@@ -229,7 +242,7 @@ export default function Home() {
                     <span className="text-sm text-muted">Role: <span className="font-semibold text-ink">{p.role}</span></span>
                   </div>
                 </div>
-                <div className={`min-w-0 ${flip ? 'lg:order-1' : ''}`}>{visual}</div>
+                <div className={`min-w-0 ${flip ? 'lg:order-1' : ''}`}><ProjectImage src={p.image} alt={`${p.name} screenshot`} frameUrl={p.live?.replace(/^https?:\/\//, '').replace(/\/$/, '')} className="block h-auto w-full" fallback={visual} /></div>
               </article>
             ))}
 
@@ -238,6 +251,18 @@ export default function Home() {
               {moreProjects.map((p) => {
                 const inner = (
                   <>
+                    <div className="-mx-6 -mt-6 mb-5 aspect-[2/1] overflow-hidden rounded-t-2xl border-b border-line bg-bg-2">
+                      <ProjectImage
+                        src={p.image}
+                        alt={`${p.name} screenshot`}
+                        className="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.03]"
+                        fallback={
+                          <div className="grid h-full w-full place-items-center bg-[radial-gradient(circle_at_30%_20%,var(--accent-soft),transparent_60%)]">
+                            <span className="font-display text-3xl font-extrabold text-gradient">{p.name.split(' ').map((w) => w[0]).join('').slice(0, 3)}</span>
+                          </div>
+                        }
+                      />
+                    </div>
                     <div className="flex items-start justify-between gap-4">
                       <h4 className="font-display text-lg font-bold">{p.name}</h4>
                       {p.live
@@ -314,9 +339,9 @@ export default function Home() {
               <div>
                 <p className="code text-sm text-accent">// let’s work together</p>
                 <h2 className="mt-3 font-display text-[clamp(2rem,4.6vw,3.4rem)] font-extrabold leading-[1.05] tracking-tight">
-                  Looking for a .NET or full-stack developer?
+                  Hiring for .NET, full-stack or AI/ML roles?
                 </h2>
-                <p className="mt-4 max-w-lg text-muted">I’m open to full-time roles and ready to start. Send me a message and I’ll get back to you within a day.</p>
+                <p className="mt-4 max-w-lg text-muted">I’m open to full-time and remote roles as a .NET Developer, Full-Stack Engineer or AI/ML Engineer, and I can start right away. Email is the fastest way to reach me.</p>
                 <div className="mt-8 flex flex-wrap gap-3">
                   <a href={`mailto:${profile.email}`} className="btn-primary inline-flex items-center gap-2 rounded-xl px-6 py-3.5 font-semibold"><Icon name="mail" className="h-4 w-4" /> Email me</a>
                   <a href={profile.resume} {...ext} className="inline-flex items-center gap-2 rounded-xl border border-line bg-surface px-6 py-3.5 font-semibold hover:border-accent"><Icon name="download" className="h-4 w-4" /> Download résumé</a>

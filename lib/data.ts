@@ -2,7 +2,8 @@
 
 export const profile = {
   name: 'Zainab Al Mansoor',
-  role: '.NET Developer & Full-Stack Software Engineer',
+  role: '.NET, Full-Stack & AI/ML Developer',
+  photo: '/images/zainab.jpg',
   location: 'Karachi, Pakistan',
   email: 'zainabalmansoor2024@gmail.com',
   phone: '+92 328 9212815',
@@ -10,7 +11,7 @@ export const profile = {
   github: 'https://github.com/Zainab-Al-Mansoor/',
   resume: '/Zainab_Al_Mansoor_Resume.pdf',
   intro:
-    'I build secure, scalable web applications with C#, ASP.NET Core 8 and SQL Server, and I ship AI features that work in production. Currently a .NET Developer at Sirat International.',
+    '.NET Developer at Sirat International who builds secure web platforms in C#, ASP.NET Core 8 and SQL Server, and trains and deploys machine-learning models in Python. Open to .NET, full-stack and AI/ML engineering roles.',
 };
 
 export const services = [
@@ -27,10 +28,10 @@ export const services = [
     tags: ['TypeScript', 'React / Angular', 'Tailwind CSS'],
   },
   {
-    title: 'AI in production',
+    title: 'AI / ML engineering',
     icon: 'spark',
-    text: 'Machine-learning features that ship: model training and evaluation in Python, served behind a real web app with a human in the loop.',
-    tags: ['Python', 'XGBoost', 'TensorFlow.js'],
+    text: 'Data pipelines, feature engineering, model training and evaluation in Python, then deployment behind a real web app with monitoring and a human in the loop.',
+    tags: ['Python', 'scikit-learn', 'XGBoost', 'TensorFlow.js'],
   },
 ];
 
@@ -86,6 +87,7 @@ export type Project = {
   stack: string[];
   live?: string;
   code?: string;
+  image?: string;
 };
 
 export const featured: Project[] = [
@@ -110,6 +112,7 @@ export const featured: Project[] = [
     ],
     stack: ['Python', 'Flask', 'XGBoost', 'scikit-learn', 'TensorFlow.js', 'librosa', 'SQLAlchemy', 'Tailwind CSS', 'Docker', 'Railway'],
     live: 'https://sonicsentinel-ai-production.up.railway.app/',
+    image: '/projects/sonicsentinel.jpg',
   },
   {
     name: 'Realtor’s Portal',
@@ -125,16 +128,17 @@ export const featured: Project[] = [
     ],
     stack: ['C#', 'ASP.NET Core 8 MVC', 'EF Core', 'SQL Server', 'Identity', 'JWT', 'Tailwind CSS'],
     live: 'http://realtors.runasp.net/',
+    image: '/projects/realtors-portal.jpg',
   },
 ];
 
 export const moreProjects = [
-  { name: 'CARE', desc: 'Healthcare management system with role-based panels for patients, physicians and admins.', stack: 'PHP · MySQL · Tailwind CSS' },
-  { name: 'Sirat-ul-Jinan Academy', desc: 'Student registration and a custom CMS with admin reporting.', stack: 'PHP · MySQL · JavaScript', live: 'https://www.siratacademy.com.pk/' },
-  { name: 'E-Kart', desc: 'Electronics store with a live REST API catalog, instant search and a persistent cart.', stack: 'JavaScript · REST APIs', live: 'https://zainab-al-mansoor.github.io/E-Kart/' },
-  { name: 'A-Bari Dental', desc: 'Wireframes and high-fidelity prototypes for frictionless patient booking.', stack: 'Figma · UI/UX', live: 'https://www.abaridental.com.pk/' },
-  { name: 'Merciado Amusement Park', desc: 'Ticketing portal with form validation and animated interactions.', stack: 'jQuery · Bootstrap 5', live: 'https://zainab-al-mansoor.github.io/Merciado-Amusement-Park/' },
-  { name: 'Cell Info', desc: 'Phone specifications site deployed through GitHub Pages.', stack: 'HTML5 · CSS3 · JavaScript', live: 'https://qirat-al-mansoor.github.io/CELLINFO/index.html/' },
+  { name: 'CARE', desc: 'Healthcare management system with role-based panels for patients, physicians and admins.', stack: 'PHP · MySQL · Tailwind CSS', image: '/projects/care.jpg' },
+  { name: 'Sirat-ul-Jinan Academy', desc: 'Student registration and a custom CMS with admin reporting.', stack: 'PHP · MySQL · JavaScript', live: 'https://www.siratacademy.com.pk/', image: '/projects/sirat-ul-jinan.jpg' },
+  { name: 'E-Kart', desc: 'Electronics store with a live REST API catalog, instant search and a persistent cart.', stack: 'JavaScript · REST APIs', live: 'https://zainab-al-mansoor.github.io/E-Kart/', image: '/projects/e-kart.jpg' },
+  { name: 'A-Bari Dental', desc: 'Wireframes and high-fidelity prototypes for frictionless patient booking.', stack: 'Figma · UI/UX', live: 'https://www.abaridental.com.pk/', image: '/projects/a-bari-dental.jpg' },
+  { name: 'Merciado Amusement Park', desc: 'Ticketing portal with form validation and animated interactions.', stack: 'jQuery · Bootstrap 5', live: 'https://zainab-al-mansoor.github.io/Merciado-Amusement-Park/', image: '/projects/merciado.jpg' },
+  { name: 'Cell Info', desc: 'Phone specifications site deployed through GitHub Pages.', stack: 'HTML5 · CSS3 · JavaScript', live: 'https://qirat-al-mansoor.github.io/CELLINFO/index.html/', image: '/projects/cell-info.jpg' },
 ];
 
 export const skills: { group: string; items: string[] }[] = [

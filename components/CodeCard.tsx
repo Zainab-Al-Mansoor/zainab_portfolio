@@ -19,7 +19,7 @@ const lines: React.ReactNode[] = [
   <>{'        '}[<S c={'"C#"'} />, <S c={'"ASP.NET Core 8"'} />, <S c={'"SQL Server"'} />, <S c={'"Azure"'} />];</>,
   <></>,
   <>{'    '}<K c="public" /> <T c="string" />[] <P c="Ships" /> =&gt;</>,
-  <>{'        '}[<S c={'"REST APIs"'} />, <S c={'"Full-stack apps"'} />, <S c={'"AI features"'} />];</>,
+  <>{'        '}[<S c={'"REST APIs"'} />, <S c={'"Full-stack apps"'} />, <S c={'"ML models"'} />];</>,
   <></>,
   <>{'    '}<K c="public" /> <T c="bool" /> <P c="OpenToWork" /> =&gt; <B c="true" />;<span className="caret ml-0.5 inline-block h-[1.05em] w-[0.5em] translate-y-[3px] bg-[#c792ea]" /></>,
   <>{'}'}</>,
